@@ -1,0 +1,408 @@
+:root {
+  --bg: #a4d4ae;
+  --color: #03b384;
+  --color1: #029271;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 7%;
+  background-color: rgba(164, 212, 174, 0.8);
+  border-bottom: 1px solid rgb(4, 189, 139);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.navbar .navbar-logo {
+  height: 80px;
+}
+
+.navbar .navbar-logo img {
+  width: 110px;
+  margin-top: -15px;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0rem 2rem;
+  transition: 0.5s ease;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--color1);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--color1);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--color1);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#about {
+  padding: 8rem 5% 1.4%;
+}
+
+#about #row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  /* justify-content: center; */
+}
+
+@keyframes sliderAnimation {
+  0% {
+    transform: translateX(0);
+  } /* Gambar 1 */
+  11.11% {
+    transform: translateX(-500px);
+  } /* Gambar 2 (pergeseran 1.5s) */
+  22.22% {
+    transform: translateX(-500px);
+  } /* Tetap di Gambar 2 */
+  33.33% {
+    transform: translateX(-1000px);
+  } /* Gambar 3 (pergeseran 1.5s) */
+  44.44% {
+    transform: translateX(-1000px);
+  } /* Tetap di Gambar 3 */
+  55.55% {
+    transform: translateX(-1500px);
+  } /* Gambar 4 (pergeseran 1.5s) */
+  66.67% {
+    transform: translateX(-1500px);
+  } /* Tetap di Gambar 4 */
+  77.78% {
+    transform: translateX(-2000px);
+  } /* Gambar 5 (pergeseran 1.5s) */
+  88.89% {
+    transform: translateX(-2000px);
+  } /* Tetap di Gambar 5 */
+  95% {
+    transform: translateX(-2500px);
+  } /* Gambar 6 */
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+#about #row .slider {
+  width: 500px;
+  height: 500px;
+  margin: 35px auto 35px auto;
+  overflow: hidden;
+}
+
+#about #row .simg {
+  display: flex;
+  width: max-content;
+  animation: sliderAnimation 40s infinite;
+  /* transition: transform 5s ease; */
+  transition-timing-function: ease-in-out; /* Animasi mulus */
+}
+
+#about #row .simg img {
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+#about #row .sliderimage {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+#about #row #content {
+  width: 50%;
+  margin-left: 13px;
+}
+
+#about #row #content h1 {
+  color: #ffffff;
+  /* color: var(--color); */
+  text-align: left;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+#about #row #content h1 span {
+  color: var(--color);
+  /* color: #fff; */
+}
+
+#about #row #content p {
+  text-align: left;
+  margin-left: 0.8rem;
+  font-size: 1.2rem;
+}
+
+#vision {
+  padding: 4rem 8% 0.5%;
+}
+
+#vision h1 {
+  /* text-align: center; */
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#vision h1 span {
+  color: var(--color);
+}
+
+#vision p {
+  text-align: left;
+  margin: 0 80px 0 10px;
+  font-size: 1.2rem;
+}
+
+#mision {
+  padding: 2rem 8% 1.4%;
+}
+
+#mision h1 {
+  /* text-align: center; */
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#mision h1 span {
+  color: var(--color);
+}
+
+#mision p {
+  text-align: left;
+  margin: 0 80px 0 10px;
+  line-height: 18px;
+  font-size: 1.2rem;
+}
+
+#testimonials {
+  padding: 4rem 8% 0.5%;
+}
+
+#testimonials h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#testimonials h1 span {
+  color: var(--color);
+}
+
+#testimonials #row {
+  display: flex;
+  justify-content: center;
+}
+
+#testimonials #row .column {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  flex-basis: 50%;
+  margin-right: 80px;
+}
+
+#testimonials #row .column h3 {
+  font-size: 1.5rem;
+  color: var(--color1);
+  margin-bottom: 15px;
+}
+
+#testimonials #row .column .rating {
+  color: var(--color1);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+#testimonials #row .column p {
+  text-align: justify;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+#testimonials #row .column .profile {
+  /* height: 80px; */
+  display: flex;
+}
+
+#testimonials #row .column .profile img {
+  width: 20%;
+  /* height: 15%; */
+  border-radius: 100%;
+}
+
+#testimonials #row .column .profile span {
+  /* line-height: ; */
+  margin: auto 10px auto 0;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--color);
+  text-align: center;
+  padding: 1rem 0.3rem;
+  margin-top: 3rem;
+}
+
+footer #socials {
+  padding: 1rem 0;
+}
+
+footer #socials a {
+  color: #fff;
+  margin: 1rem;
+  transition: 0.5s;
+}
+
+footer #socials a:hover {
+  color: var(--bg);
+}
+
+footer #links {
+  margin-bottom: 1.4rem;
+}
+
+footer #links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+  transition: 0.5s;
+}
+
+footer #links a:hover {
+  color: var(--bg);
+}
+
+footer #credit {
+  font-size: 0.8rem;
+}
+
+footer #credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tab */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(164, 212, 174, 1);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover:after {
+    transform: scaleX(0.2);
+  }
+
+  #about #row #content {
+    width: 100%;
+  }
+
+  #testimonials #row .column {
+    flex-basis: 60%;
+    margin-right: 40px;
+  }
+
+  #testimonials #row .column .profile img {
+    width: 30%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}

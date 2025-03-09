@@ -1,0 +1,299 @@
+:root {
+  --bg: #a4d4ae;
+  --color: #03b384;
+  --color1: #029271;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  /* height: 300%; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 7%;
+  background-color: rgba(164, 212, 174, 0.8);
+  border-bottom: 1px solid rgb(4, 189, 139);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.navbar .navbar-logo {
+  height: 80px;
+}
+
+.navbar .navbar-logo img {
+  width: 110px;
+  margin-top: -15px;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0rem 2rem;
+  transition: 0.5s ease;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--color1);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--color1);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--color1);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#best {
+  padding: 8rem 7% 0.4%;
+}
+
+#best h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+#best h1 span {
+  color: var(--color);
+}
+
+#best p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+#best .row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+#best .row .menu {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+#best .row .menu .mimg {
+  width: 80%;
+  max-width: 180px;
+  border-radius: 50%;
+  margin: 0px 30px;
+}
+
+#best .row .menu .mtitle {
+  margin: 1rem auto 0.5rem;
+  white-space: nowrap;
+}
+
+#menu {
+  padding: 3rem 7% 1.4%;
+}
+
+#menu h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+#menu h1 span {
+  color: var(--color);
+}
+
+#menu p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  margin-bottom: 5rem;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+#menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: -2rem; */
+  justify-content: center;
+}
+
+#menu .row .menu {
+  text-align: center;
+  /* padding-bottom: 2rem; */
+}
+
+#menu .row .menu p {
+  margin-bottom: 3rem;
+}
+
+#menu .row .menu .mimg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0px 30px;
+}
+
+#menu .row .menu .mtitle {
+  margin: 1rem auto 0.5rem;
+}
+
+footer {
+  background-color: var(--color);
+  text-align: center;
+  padding: 1rem 0.3rem;
+  margin-top: 3rem;
+}
+
+footer #socials {
+  padding: 1rem 0;
+}
+
+footer #socials a {
+  color: #fff;
+  margin: 1rem;
+  transition: 0.5s;
+}
+
+footer #socials a:hover {
+  color: var(--bg);
+}
+
+footer #links {
+  margin-bottom: 1.4rem;
+}
+
+footer #links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+  transition: 0.5s;
+}
+
+footer #links a:hover {
+  color: var(--bg);
+}
+
+footer #credit {
+  font-size: 0.8rem;
+}
+
+footer #credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tab */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(164, 212, 174, 1);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover:after {
+    transform: scaleX(0.2);
+  }
+
+  #best .row .menu .mtitle {
+    margin: 1rem auto 0.5rem 3rem;
+  }
+
+  #best .row .menu .mprice {
+    margin: 1rem auto 0.5rem 3rem;
+  }
+
+  #menu .row .menu .mimg {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
